@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 500px;
+  border: 1px solid black;
+  margin: auto auto;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  width: 75px;
+  height: auto;
+}
+
+#final {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: end;
+  margin-left: auto;
+  padding-right: 52px;
+}
