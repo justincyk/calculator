@@ -117,16 +117,32 @@ btnList.forEach( (btn) => {
     }
     else if( e.target.classList.contains("num") )
     {
+      if(currStep === "result")
+      {
+        expression = "";
+        expressionDisplay.textContent = expression;
+        currNum = "";
+        prevNum = "";
+        displayResult.textContent = "";
+      }
       // reset current number if operation was pressed in previous step. Make prevNum equal to currNum.
       if( currStep === "operation" )
       {
         prevNum = currNum;
         currNum = "";
       }
-      const numberChosen = e.target.id;
-      prevStep = currStep;
-      currStep = "number";
-      addToDisplay(numberChosen);
+
+      if( e.target.textContent === "." && (currNum.indexOf('.') != -1))
+      {
+
+      }
+      else
+      {
+        const numberChosen = e.target.id;
+        prevStep = currStep;
+        currStep = "number";
+        addToDisplay(numberChosen);
+      }
 
     }
     else if( e.target.classList.contains("operation") && currStep === "operation")
@@ -172,7 +188,11 @@ btnList.forEach( (btn) => {
     {
       const result = operator(currOp, prevNum, currNum);
       console.log(result);
-      if( result === "ERROR")
+      if(currStep === "result")
+      {
+
+      }
+      else if( result === "ERROR")
       {
         prevNum = "";
         currNum = "";
