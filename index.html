@@ -6,39 +6,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculator Application</title>
   <link rel="stylesheet" href="./style/style.css">
-  <script src="/js/index.js" defer></script>
+  <script src="/js/app.js" defer></script>
 </head>
 <body>
   <div class="container">
-    <div class="row" id="final">0</div>
+    <div class="final_row">
+      <div class="expression"></div>
+      <div class="row" id="final">0</div>
+    </div>
     <div class="row">
-      <button id="reset">AC</button>
-      <button id="sign">+/-</button>
-      <button class="operation" id="module">%</button>
-      <button class="operation" id="divide">/</button>
+      <button class="resetAll top">AC</button>
+      <button class="sign top">+/-</button>
+      <button class="operation top" id="module">%</button>
+      <button class="operation side" id="divide">/</button>
     </div>
     <div class="row">
       <button class="num" id="seven">7</button>
       <button class="num" id="eight">8</button>
       <button class="num" id="nine">9</button>
-      <button class="operation" id="multiply">x</button>
+      <button class="operation side" id="multiply">x</button>
     </div>
     <div class="row">
       <button class="num" id="four">4</button>
       <button class="num" id="five">5</button>
       <button class="num" id="six">6</button>
-      <button class="operation" id="subtract">-</button>
+      <button class="operation side" id="subtract">-</button>
     </div>
     <div class="row">
       <button class="num" id="one">1</button>
       <button class="num" id="two">2</button>
       <button class="num" id="three">3</button>
-      <button class="operation" id="add">+</button>
+      <button class="operation side" id="add">+</button>
     </div>
     <div class="row">
       <button class="num" id="zero">0</button>
       <button id="period" class="num">.</button>
-      <button id="result">=</button>
+      <button class="result side">=</button>
     </div>
   </div>
 </body>

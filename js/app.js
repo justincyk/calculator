@@ -12,7 +12,9 @@ function multiply(a, b) {
 
 function divide(a, b) {
   if( +b === 0 && +a != 0) return "ERROR";
-  return (+a/+b).toFixed(2);
+  let divided = String(+a/+b);
+  if( divided.indexOf('.') != -1 && divided.indexOf('.') < divided.length ) return Number(divided).toFixed(2);
+  else return Number(divided);
 }
 
 function module(a, b) {
@@ -93,6 +95,9 @@ let operationAlreadyPressed = false;
 let currOp = "";
 // previous operation
 let prevOp = "";
+// expression variable
+let expression = "";
+let expressionDisplay = document.querySelector(".expression");
 
 // 2) get list of all numbers
 let btnList = document.querySelectorAll("button");
@@ -107,6 +112,8 @@ btnList.forEach( (btn) => {
       prevOp = "";
       operationAlreadyPressed = false;
       displayResult.textContent = 0;
+      expressionDisplay.textContent = "";
+      expression = "";
     }
     else if( e.target.classList.contains("num") )
     {
@@ -120,6 +127,7 @@ btnList.forEach( (btn) => {
       prevStep = currStep;
       currStep = "number";
       addToDisplay(numberChosen);
+
     }
     else if( e.target.classList.contains("operation") && currStep === "operation")
     {
@@ -141,16 +149,22 @@ btnList.forEach( (btn) => {
           prevOp = "";
           operationAlreadyPressed = false;
           displayResult.textContent = "ERROR CANNOT DIVIDE BY 0";
+          expressionDisplay.textContent = "";
         }
         else
-       {
+        {
           prevNum = currNum;
           currNum = result;
+          expression = `${currNum} ${e.target.textContent}`;
+          expressionDisplay.textContent = expression;
           console.log(currNum);
         }
       }
       else
       {
+        expression = `${currNum} ${e.target.textContent}`;
+        console.log(expression);
+        expressionDisplay.textContent = expression;
         operationAlreadyPressed = true;
       }
     }
@@ -174,6 +188,8 @@ btnList.forEach( (btn) => {
         displayResult.textContent = currNum;
         prevStep = currStep;
         currStep = "result";
+        expression += ` ${prevNum} = ${currNum}`;
+        expressionDisplay.textContent = expression;
         operationAlreadyPressed = false;
       }
     }

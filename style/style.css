@@ -1,12 +1,19 @@
+body {
+  background-color: beige;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 400px;
-  height: 500px;
-  border: 1px solid black;
-  margin: auto auto;
+  height: auto;
+  border: 4px solid black;
+  margin: 100px auto;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: red;
 }
 
 .row {
@@ -16,14 +23,72 @@
 }
 
 button {
-  width: 75px;
-  height: auto;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100px;
+  height: 75px;
+  border: 2px black solid;
+}
+
+.clicked {
+  background-color: white;
+}
+
+.side {
+  background-color: #ffb347;
+}
+
+.top {
+  background-color: skyblue;
+  border-top: 4px solid black;
+}
+
+#divide {
+  border-top: 4px solid black;
+}
+
+.num {
+  background-color: aquamarine;
+}
+
+#zero {
+  width: 200px;
+}
+
+.final_row {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 4px solid black;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom: 0;
+  height: 100px;
+  background-color: gray;
+  /* padding-right: 5px;
+  margin: 0 0; */
 }
 
 #final {
   display: flex;
+  box-sizing:border-box;
+  align-items: flex-start;
+  flex: 2;
+  /* width: 390px; */
   flex-direction: row-reverse;
   justify-content: end;
   margin-left: auto;
-  padding-right: 52px;
+  width: 100%;
+  padding-right: 10px;
+  font-size: 2em;
+}
+
+.expression {
+  flex: 1;
+  padding-top: 10px;
+  padding-right: 10px;
+  height: 3vw;
+  display: flex;
+  flex-direction: row-reverse;
 }
